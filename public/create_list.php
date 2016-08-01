@@ -1,5 +1,6 @@
 <?php session_start(); ?>
 <?php require_once("../resources/functions.php"); ?>
+<?php logged_in(); ?>
 <?php require_once("../resources/database_setup.php"); ?>
 
 <!DOCTYPE html>

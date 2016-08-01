@@ -11,6 +11,12 @@
 		}
 	}
     
+    function logged_in() {
+        if (!isset($_SESSION['user_id'])) {
+            redirect_to("login.php");
+        }
+    }
+    
     function find_user_by_username($username) {
         global $db;
         

@@ -1,5 +1,10 @@
 <?php session_start(); ?>
 <?php require_once("../resources/functions.php"); ?>
+<?php
+    if (!isset($_SESSION['user_id'])) {
+            redirect_to("../login.php");
+        }
+ ?>
 <?php require_once("../resources/database_setup.php"); ?>
 
 <!DOCTYPE html>
@@ -11,13 +16,10 @@
 <body>
     <?php
         $list_id = mysqli_real_escape_string($db, $_GET['id']);
-        if (!isset($_GET['id'])) {
-            redirect_to('profile.php/?id=' . $list_id);
-        } else {
-            if (isset($_POST['submit'])) {
-                $note = mysqli_real_escape_string($db, $_POST['note']);
-                create_new_list_item($note, $list_id);
-            }
+        
+        if (isset($_POST['submit'])) {
+            $note = mysqli_real_escape_string($db, $_POST['note']);
+            create_new_list_item($note, $list_id);
         }
         $list_items = find_all_list_items($list_id);
         while ($item = mysqli_fetch_assoc($list_items)) {
