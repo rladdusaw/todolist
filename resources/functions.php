@@ -55,16 +55,28 @@
         return $result;
     }
     
-    //finish
-    function create_new_list_item($name, $list_id) {
+    function get_list_name($list_id) {
+        global $db;
+        
+        $query  = "SELECT name ";
+        $query .= "FROM lists ";
+        $query .= "WHERE id = '{$list_id}' ";
+        $query .= "LIMIT 1;";
+        $list_name = mysqli_query($db, $query);
+        confirm_query($list_name);
+        return $list_name;
+    }
+    
+    function create_new_list_item($note, $list_id) {
         global $db;
         
         $query  = "INSERT INTO items (";
-        $query .= "name, user_id";
+        $query .= "note, list_id";
         $query .= ") VALUES (";
-        $query .= "'{$name}', '{$user_id}'";
+        $query .= "'{$note}', '{$list_id}'";
         $query .= ");";
-        $create_list = mysqli_query($db, $query);
+        $create_item = mysqli_query($db, $query);
+        confirm_query($create_item);
         return $create_item;
     }
     
