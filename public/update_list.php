@@ -38,7 +38,7 @@
     
     <a href="../profile.php">Profile</a>
     <br>
-    <a href=<?php echo "../update_list.php/?" . $list_id ?>>Logout</a>
+    <a href=<?php echo "logout.php/?" . $list_id ?>>Logout</a>
 </body>
 </html>
 

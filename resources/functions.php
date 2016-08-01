@@ -20,11 +20,9 @@
     function find_user_by_username($username) {
         global $db;
         
-        $safe_username = mysqli_real_escape_string($db, $username);
-        
         $query  = "SELECT * ";
         $query .= "FROM users ";
-        $query .= "WHERE username = '$safe_username' ";
+        $query .= "WHERE username = '$username' ";
         $query .= "LIMIT 1;";
         $result = mysqli_query($db, $query);
         confirm_query($result);
@@ -38,11 +36,9 @@
     function find_all_user_lists($user_id) {
         global $db;
         
-        $safe_user_id = mysqli_real_escape_string($db, $user_id);
-        
         $query  = "SELECT * ";
         $query .= "FROM lists ";
-        $query .= "WHERE user_id = '{$safe_user_id}';";
+        $query .= "WHERE user_id = '{$user_id}';";
         $result = mysqli_query($db, $query);
         confirm_query($result);
         return $result;
@@ -51,11 +47,9 @@
     function find_all_list_items($list_id) {
         global $db;
         
-        $safe_list_id = mysqli_real_escape_string($db, $list_id);
-        
         $query  = "SELECT * ";
         $query .= "FROM items ";
-        $query .= "WHERE list_id = '{$safe_list_id}';";
+        $query .= "WHERE list_id = '{$list_id}';";
         $result = mysqli_query($db, $query);
         confirm_query($result);
         return $result;
