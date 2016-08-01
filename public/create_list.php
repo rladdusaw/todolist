@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <?php require_once("../resources/functions.php"); ?>
-<?php logged_in(); ?>
+<?php confirm_logged_in(); ?>
 <?php require_once("../resources/database_setup.php"); ?>
 
 <!DOCTYPE html>
@@ -8,8 +8,10 @@
 <html>
 <head>
     <title>Profile</title>
+    <link href="/todolist/resources/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+    <?php require_once("../resources/navbar.php") ?>
     <form action="create_list.php" method="POST">
         List Name:<br>
         <input type="text" name="name"><br>
@@ -28,6 +30,8 @@
     <a href="profile.php">Profile</a>
     <br>
     <a href="logout.php">Logout</a>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/todolist/resources/static/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
 

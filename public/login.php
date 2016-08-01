@@ -6,8 +6,10 @@
 
 <head>
     <title>Login</title>
+    <link href="/todolist/resources/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+    <?php require_once("../resources/navbar.php") ?>
     <form action="login.php" method="POST">
         Username:<br>
         <input type="text" name="username"><br>
@@ -32,6 +34,8 @@
             }
         }
     ?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/todolist/resources/static/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 <?php

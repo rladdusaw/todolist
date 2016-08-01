@@ -12,8 +12,10 @@
 <html>
 <head>
     <title>List Detail</title>
+    <link href="/todolist/resources/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+    <?php require_once("../resources/navbar.php") ?>
     <?php
         $list_id = mysqli_real_escape_string($db, $_GET['id']);
         
@@ -38,7 +40,9 @@
     
     <a href="../profile.php">Profile</a>
     <br>
-    <a href=<?php echo "logout.php/?" . $list_id ?>>Logout</a>
+    <a href="../logout.php">Logout</a>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/todolist/resources/static/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
 

@@ -1,5 +1,5 @@
 <?php
-    include("configuration.php");
+    require_once("configuration.php");
     $db = mysqli_connect(
         'localhost', $db_user,
         $db_pass, 'to_do_list'

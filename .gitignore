@@ -1,1 +1,4 @@
 resources/configuration.php
+resources/static/bootstrap/css resources/static/bootstrap/fonts resources/static/bootstrap/js
+resources/static/bootstrap/*.*
+resources/static/*.*
