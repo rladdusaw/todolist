@@ -23,7 +23,7 @@
         while ($item = mysqli_fetch_assoc($list_items)) {
             echo '<p>' . $item['note'] . '</p>';
         }
-        
+        mysqli_free_result($list_items);
     ?>
     <form action=<?php echo "../update_list.php/?id=" . $list_id ?> method="POST">
         List Name: 

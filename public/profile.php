@@ -9,8 +9,9 @@
     <title>Profile</title>
 </head>
 <body>
-    <?php 
-        $lists = find_all_user_lists($_SESSION["user_id"]);
+    <?php
+        $user_id = mysqli_real_escape_string($db, $_SESSION["user_id"]);
+        $lists = find_all_user_lists($user_id);
         if ($lists) {
             while ($list = $lists->fetch_assoc()) {
                 echo '<a href="update_list.php/?id=' . $list["id"] . '">' .

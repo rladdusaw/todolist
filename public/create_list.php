@@ -20,6 +20,7 @@
         if (isset($_POST['submit'])) {
             $name = mysqli_real_escape_string($db, $_POST['name']);
             $new_item = create_new_list($name, $safe_user_id);
+            mysqli_free_result($new_item);
             redirect_to("profile.php");
         }
     ?>

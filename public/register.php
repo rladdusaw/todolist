@@ -51,6 +51,7 @@
                 } else {
                     $_SESSION["message"] = "Username/password not found.";
                 }
+                mysqli_free_result($found_account);
             }
         }
     ?>
