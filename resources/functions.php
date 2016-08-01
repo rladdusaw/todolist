@@ -29,6 +29,19 @@
         }
     }
     
+    function find_all_user_lists($user_id) {
+        global $db;
+        
+        $safe_user_id = mysqli_real_escape_string($db, $user_id);
+        
+        $query  = "SELECT * ";
+        $query .= "FROM lists ";
+        $query .= "WHERE user_id = '{$safe_user_id}';";
+        $result = mysqli_query($db, $query);
+        confirm_query($result);
+        return $result;
+    }
+    
     function attempt_login($username, $password) {
         $user = find_user_by_username($username);
         if ($user) {

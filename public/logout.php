@@ -1,5 +1,5 @@
 <?php session_start() ?>
-<?php require_once("../includes/functions.php"); ?>
+<?php require_once("../resources/functions.php"); ?>
 
 <?php
     $_SESSION["user_id"] = null;

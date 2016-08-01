@@ -1,8 +1,6 @@
-<?php
-    require_once("../resources/functions.php");
-    require_once("../resources/database_setup.php");
-    session_start();
-?>
+<?php require_once("../resources/functions.php"); ?>
+<?php require_once("../resources/database_setup.php"); ?>
+<?php session_start(); ?>
 
 <!DOCTYPE html>
 
