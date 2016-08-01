@@ -42,6 +42,44 @@
         return $result;
     }
     
+    function find_all_list_items($list_id) {
+        global $db;
+        
+        $safe_list_id = mysqli_real_escape_string($db, $list_id);
+        
+        $query  = "SELECT * ";
+        $query .= "FROM items ";
+        $query .= "WHERE list_id = '{$safe_list_id}';";
+        $result = mysqli_query($db, $query);
+        confirm_query($result);
+        return $result;
+    }
+    
+    //finish
+    function create_new_list_item($name, $list_id) {
+        global $db;
+        
+        $query  = "INSERT INTO items (";
+        $query .= "name, user_id";
+        $query .= ") VALUES (";
+        $query .= "'{$name}', '{$user_id}'";
+        $query .= ");";
+        $create_list = mysqli_query($db, $query);
+        return $create_item;
+    }
+    
+    function create_new_list($name, $user_id) {
+        global $db;
+        
+        $query  = "INSERT INTO lists (";
+        $query .= "user_id, name";
+        $query .= ") VALUES (";
+        $query .= "'{$user_id}', '{$name}'";
+        $query .= ");";
+        $create_list = mysqli_query($db, $query);
+        return $create_list;
+    }
+    
     function attempt_login($username, $password) {
         $user = find_user_by_username($username);
         if ($user) {

@@ -10,7 +10,7 @@
     <title>Register</title>
 </head>
 <body>
-    <form action="./register.php" method="POST">
+    <form action="register.php" method="POST">
         Username:<br>
         <input type="text" name="username"><br>
         Password:<br>
@@ -35,7 +35,7 @@
                     $query .= "username, password";
                     $query .= ") VALUES ( ";
                     $query .= "'{$username}', '{$hashed_pass}'";
-                    $query .= ")";
+                    $query .= ");";
                     $insert_result = mysqli_query($db, $query);
                 } else {
                     die("database query failed");
