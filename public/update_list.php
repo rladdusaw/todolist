@@ -39,3 +39,7 @@
     <a href=<?php echo "../update_list.php/?" . $list_id ?>>Logout</a>
 </body>
 </html>
+
+<?php
+    mysqli_close($db);
+?>

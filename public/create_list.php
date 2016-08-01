@@ -28,3 +28,7 @@
     <a href="logout.php">Logout</a>
 </body>
 </html>
+
+<?php
+    mysqli_close($db);
+?>
