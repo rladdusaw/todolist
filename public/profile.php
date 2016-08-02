@@ -5,7 +5,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 <head>
     <title>Profile</title>
     <link href="/todolist/resources/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">

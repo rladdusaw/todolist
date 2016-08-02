@@ -9,7 +9,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 <head>
     <title>List Detail</title>
     <link href="/todolist/resources/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">

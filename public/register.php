@@ -1,6 +1,6 @@
 <?php require_once("../resources/functions.php"); ?>
 <?php require_once("../resources/database_setup.php"); ?>
-<?php require_once("../resources/form_validation.php");?>
+<?php require_once("../resources/form_validation.php"); ?>
 <?php session_start(); ?>
 
 <!DOCTYPE html>
@@ -54,7 +54,7 @@
             <div class="form-group">
                 <label for="username" class="col-sm-2 control-label">Username</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="username" name="username">
+                    <input type="text" class="form-control" id="id_username" name="username">
                     <?php 
                         if (isset($errors['username'])) {
                             echo "<p class='text-danger'>" . $errors['username'] . "</p>";
@@ -63,9 +63,9 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for"password1" class="col-sm-2 control-label">Password</label>
-                <div class="col-md-10">
-                    <input type="password" class="form-control" id="password1" name="password1">
+                <label for="password1" class="col-sm-2 control-label">Password</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="id_password1" name="password1">
                     <?php 
                         if (isset($errors['password1'])) {
                             echo "<p class='text-danger'>" . $errors['password1'] . "</p>";
@@ -75,8 +75,8 @@
             </div>
             <div class="form-group">
                 <label for="password2" class="col-sm-2 control-label">Repeat Password</label>
-                <div class="col-md-10">
-                    <input type="password" class="form-control" id="password2" name="password2">
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="id_password2" name="password2">
                     <?php 
                         if (isset($errors['password2'])) {
                             echo "<p class='text-danger'>" . $errors['password2'] . "</p>";
@@ -86,7 +86,7 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-10 col-sm-offset-2">
-                    <input type="submit" name="submit" type="submit" value="Create Account" class="btn btn-primary">
+                    <input id="id_submit" name="submit" type="submit" value="Create Account" class="btn btn-primary">
                 </div>
             </div>
         </form>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 
+<html lang="en">
 <head>
     <title>To-Do List</title>
     <link href="/todolist/resources/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -13,3 +14,4 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="/todolist/resources/static/bootstrap/js/bootstrap.min.js"></script>
 </body>
+</html>

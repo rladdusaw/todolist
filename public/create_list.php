@@ -5,18 +5,20 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 <head>
     <title>Profile</title>
     <link href="/todolist/resources/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <?php require_once("../resources/navbar.php") ?>
-    <form action="create_list.php" method="POST">
-        List Name:<br>
-        <input type="text" name="name"><br>
-        <input type="submit" name="submit" value="Create List">
-    </form>
+    <div class="contianer col-md-4 col-md-offset-4">
+        <form action="create_list.php" method="POST">
+            List Name:<br>
+            <input type="text" name="name"><br>
+            <input type="submit" name="submit" value="Create List">
+        </form>
+    </div>
     
     <?php
         $safe_user_id = mysqli_real_escape_string($db, $_SESSION['user_id']);
