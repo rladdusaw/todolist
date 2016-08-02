@@ -45,8 +45,14 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-10 col-sm-offset-2">
-                    <input id="submit" type="submit" name="submit" value="Create List" class="btn btn-primary btn-block">
-                    <a href="profile.php" class="btn btn-default btn-block" role="button">Cancel</a>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <input id="submit" type="submit" name="submit" value="Create List" class="btn btn-primary btn-block">
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="profile.php" class="btn btn-default btn-block" role="button">Cancel</a>
+                        </div>
+                    </div>
                 </div>
                     
             </div>
