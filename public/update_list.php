@@ -1,13 +1,8 @@
 <?php session_start(); ?>
 <?php require_once("../resources/functions.php"); ?>
+<?php confirm_logged_in(); ?>
 <?php require_once("../resources/database_setup.php"); ?>
 <?php require_once("../resources/form_validation.php");?>
-<?php
-    if (!isset($_SESSION['user_id'])) {
-            redirect_to("../login.php");
-        }
- ?>
-<?php require_once("../resources/database_setup.php"); ?>
 
 <!DOCTYPE html>
 
@@ -17,14 +12,14 @@
     <link href="/todolist/resources/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <?php require_once("../resources/navbar.php") ?>
+    <?php require_once("../resources/navbar2.php") ?>
     <?php $list_id = mysqli_real_escape_string($db, $_GET['id']); ?>
     <div class="container col-md-6 col-md-offset-3">
         <div class="jumbotron">
             <h1><?php echo mysqli_fetch_assoc(get_list_name($list_id))['name']; ?></h1>
         </div>
     </div>
-    <div class="container col-md-6 col-md-offset-4">
+    <div class="container col-md-6 col-md-offset-3">
         <?php
             if (isset($_POST['submit'])) {
                 $note = mysqli_real_escape_string($db, $_POST['note']);

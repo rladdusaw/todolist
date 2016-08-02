@@ -17,7 +17,12 @@
     
     function confirm_logged_in() {
         if (!isset($_SESSION['user_id'])) {
-            redirect_to("login.php");
+            $page = basename($_SERVER['PHP_SELF']);
+            if ($page === 'register.php' || $page === 'profile.php' || $page === 'index.php') {
+                redirect_to("login.php");
+            } else {
+                redirect_to("../login.php");
+            }
         }
     }
     
@@ -118,6 +123,24 @@
         $updated_item = mysqli_query($db, $query);
         confirm_query($updated_item);
         return $updated_item;
+    }
+    
+    function delete_list() {
+        
+    }
+    
+    function delete_list_item($user_id, $list_id, $item_id) {
+    global $db;
+        
+        $query  = "DELETE items ";
+        $query .= "FROM items ";
+        $query .= "INNER JOIN lists ";
+        $query .= "ON items.list_id=lists.id ";
+        $query .= "WHERE lists.user_id='{$user_id}' ";
+        $query .= "AND items.list_id='{$list_id}' ";
+        $query .= "AND items.id='{$item_id}';";
+        $result = mysqli_query($db, $query);
+        return $result;
     }
     
     function attempt_login($username, $password) {

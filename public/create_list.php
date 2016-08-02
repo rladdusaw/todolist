@@ -12,7 +12,7 @@
     <link href="/todolist/resources/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <?php require_once("../resources/navbar.php") ?>
+    <?php require_once("../resources/navbar2.php") ?>
     <?php $errors = array(); ?>
     <?php
         $safe_user_id = mysqli_real_escape_string($db, $_SESSION['user_id']);

@@ -1,5 +1,6 @@
 <?php session_start(); ?>
 <?php require_once("../resources/functions.php"); ?>
+<?php confirm_logged_in(); ?>
 <?php require_once("../resources/database_setup.php"); ?>
 <?php require_once("../resources/form_validation.php");?>
 
@@ -11,7 +12,7 @@
     <link href="/todolist/resources/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <?php require_once("../resources/navbar.php") ?>
+    <?php require_once("../resources/navbar2.php") ?>
     <?php 
         $list_id = mysqli_real_escape_string($db, $_GET['list_id']);
         $item_id = mysqli_real_escape_string($db, $_GET['item_id']);
