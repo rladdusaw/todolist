@@ -44,10 +44,10 @@
             <?php
                 while ($item = mysqli_fetch_assoc($list_items)) {
                     echo '<div class="col-sm-8"><pre>' . $item['note'] . '</pre></div>';
-                    echo '<div class="col-sm-2"><a href=edit_item.php/?list_id=' . 
+                    echo '<div class="col-sm-2"><a href="../edit_item.php/?list_id=' . 
                         $item['list_id'] .'&item_id=' . $item['id'] . 
                         '" class="btn btn-warning btn-block">Edit</a></div>';
-                    echo '<div class="col-sm-2"><a href="delete_item.php/?list_id=' .
+                    echo '<div class="col-sm-2"><a href="../delete_item.php/?list_id=' .
                         $item['list_id'] . '&item_id=' . $item['id'] . 
                         '" class="btn btn-danger btn-block">Delete</a></div>';
                 }
@@ -67,10 +67,11 @@
                         ?>
                     </div>
                 </div>
-                <div class="col-sm-2 col-sm-offset-1">
-                    <div class="form-group">
-                        <input id="submit" type="submit" name="submit" value="Add Item" class="btn btn-primary btn-block">
-                    </div>
+                <div class="col-sm-2">
+                    <input id="submit" type="submit" name="submit" value="Add Item" class="btn btn-primary btn-block">
+                </div>
+                <div class="col-sm-2">
+                    <a href="../profile.php" class="btn btn-default btn-block">Cancel</a>
                 </div>
             </div>
         </form>

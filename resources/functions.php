@@ -71,6 +71,18 @@
         return $list_name;
     }
     
+    function get_item_note($list_id, $item_id) {
+        global $db;
+        
+        $query  = "SELECT note ";
+        $query .= "FROM items ";
+        $query .= "WHERE id = '{$item_id}' AND list_id = '{$list_id}' ";
+        $query .= "LIMIT 1;";
+        $item_note = mysqli_query($db, $query);
+        confirm_query($item_note);
+        return $item_note;
+    }
+    
     function create_new_list_item($note, $list_id) {
         global $db;
         
