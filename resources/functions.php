@@ -105,7 +105,19 @@
         $query .= "'{$user_id}', '{$name}'";
         $query .= ");";
         $create_list = mysqli_query($db, $query);
+        confirm_query($create_list);
         return $create_list;
+    }
+    
+    function update_list_item($list_id, $item_id, $new_note) {
+        global $db;
+        
+        $query  = "UPDATE items ";
+        $query .= "SET note='{$new_note}' ";
+        $query .= "WHERE id = '{$item_id}' AND list_id = '{$list_id}';";
+        $updated_item = mysqli_query($db, $query);
+        confirm_query($updated_item);
+        return $updated_item;
     }
     
     function attempt_login($username, $password) {

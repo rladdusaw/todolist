@@ -27,7 +27,7 @@
                 field_value_exists($required_fields);
                 
                 if (empty($errors)) {
-                    create_new_list_item($note, $list_id);
+                    update_list_item($list_id, $item_id, $note);
                     redirect_to("../update_list.php/?id=" . $list_id);
                 }
             }
@@ -53,7 +53,7 @@
                             <input id="submit" type="submit" name="submit" value="Update Note" class="btn btn-primary btn-block">
                         </div>
                         <div class="col-sm-5">
-                            <a href="profile.php" class="btn btn-default btn-block" role="button">Cancel</a>
+                            <a href="../update_list.php/?id=<?php echo $list_id ?>" class="btn btn-default btn-block" role="button">Cancel</a>
                         </div>
                     </div>
                 </div>
