@@ -18,7 +18,7 @@
             $password1 = mysqli_real_escape_string($db, $_POST['password1']);
             $password2 = mysqli_real_escape_string($db, $_POST['password2']);
             
-            // Error handling.
+            // Field validation
             $required_fields = array("username", "password1", "password2");
             field_value_exists($required_fields);
            
