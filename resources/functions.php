@@ -125,12 +125,26 @@
         return $updated_item;
     }
     
-    function delete_list() {
+    function delete_list($user_id, $list_id) {
+        global $db;
         
+        $query  = "DELETE lists ";
+        $query .= "FROM lists ";
+        $query .= "WHERE user_id='{$user_id}' ";
+        $query .= "AND id='{$list_id}' ";
+        $result = mysqli_query($db, $query);
+        
+        $query2  = "DELETE items ";
+        $query2 .= "FROM items ";
+        $query2 .= "INNER JOIN lists ";
+        $query2 .= "ON items.list_id=lists.id ";
+        $query2 .= "WHERE lists.user_id='{$user_id}' ";
+        $query2 .= "AND items.list_id='{$list_id}';";
+        $result = mysqli_query($db, $query2);
     }
     
     function delete_list_item($user_id, $list_id, $item_id) {
-    global $db;
+        global $db;
         
         $query  = "DELETE items ";
         $query .= "FROM items ";
